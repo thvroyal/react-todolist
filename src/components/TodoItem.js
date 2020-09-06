@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import classNames from 'classnames';
 import './TodoItem.css';
-import checkboxImg from '../img/checkbox.png';
-import doneImg from '../img/done.png';
+import checkboxImg from '../img/checkbox.svg';
+import doneImg from '../img/checked.svg';
+import closeImg from '../img/close.svg';
 
 class TodoItem extends Component {
     render() {
@@ -16,8 +17,12 @@ class TodoItem extends Component {
             <div className={classNames('TodoItem', {
                 'TodoItem-complete': item.isComplete
             })}>
-                <img onClick={onClick} src={urlImg} width={20} height={20} alt='img' />
-                <p>{item.title}</p>
+                <img onClick={onClick} src={urlImg} alt='img' />
+                <div className="content">
+                    <p>{item.title}</p>
+                    <span>20 Th.8 2020</span>
+                </div>
+                <img className="btn-delete" src={closeImg} alt='img_close' />
             </div>
         );
     }

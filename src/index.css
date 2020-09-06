@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  font-family: 'Helvetica Neue',
-  Arial, Helvetica, sans-serif;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%);
+  background: linear-gradient(127.47deg, #60D2F5 19.73%, #11718F 81.73%);
+  background-repeat: no-repeat;
 }
 
 code {

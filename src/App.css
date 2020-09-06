@@ -1,13 +1,16 @@
 .App {
-  text-align: center;
-  width: 350px;
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  left: calc(50% - 800px/2);
+  top: calc(50% - 500px/2);
   margin: auto;
   background-color: white;
-  border-radius: 10px;
-  padding: 20px 10px;
-  margin-top: 15%;
-  height: 500px;
+  box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding-top: 100px;
 }
+
 .text-header {
   color: #2F63DE;
 }

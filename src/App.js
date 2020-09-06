@@ -34,7 +34,6 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <h1 className="text-header">My Todo-List</h1>
         {
           this.state.todoItems.length > 0 && this.state.todoItems.map((item,index) => 
             <TodoItem 

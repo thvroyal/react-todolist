@@ -1,16 +1,45 @@
 .TodoItem {
-    font-weight: 300;
-    font-size: 18px;
-    color: #4d4d4d;
+    height: 60px;
     display: flex;
     align-items: center;
-    padding: 10px;
+    background-color: #f2f2f2;
+    margin-bottom: 6px;
 }
-.TodoItem > p {
+
+.TodoItem > img {
+    margin-left: 42px;
+    margin-right: 42px;
+    cursor: pointer;
+}
+
+.content {
+    width: 580px;
+}
+
+.content > p {
     margin: 0 ;
-    margin-left: 20px;
+    font-size: 16px;
+    font-weight: 400px;
+    color: black;
 }
-.TodoItem-complete > p {
+
+.content > span {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.TodoItem-complete > .content > p {
     text-decoration: line-through;
     opacity: .5;
+}
+
+.TodoItem-complete > .content > span {
+    opacity: .5;
+}
+
+.TodoItem > .btn-delete {
+    visibility: hidden;
+}
+.TodoItem:hover .btn-delete {
+    visibility: visible;
 }
