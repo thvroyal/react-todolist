@@ -1,15 +1,22 @@
 import React, {Component} from 'react';
-import './TodoItem.css'
+import classNames from 'classnames';
+import './TodoItem.css';
+import checkboxImg from '../img/checkbox.png';
+import doneImg from '../img/done.png';
 
 class TodoItem extends Component {
     render() {
-        const { item } = this.props;
-        let className = 'TodoItem';
+        const { item, onClick } = this.props;
+        let urlImg = checkboxImg;
         if (item.isComplete) {
-            className += ' TodoItem-complete';
+            urlImg = doneImg;
         }
+
         return (
-            <div className={className}>
+            <div className={classNames('TodoItem', {
+                'TodoItem-complete': item.isComplete
+            })}>
+                <img onClick={onClick} src={urlImg} width={20} height={20} alt='img' />
                 <p>{item.title}</p>
             </div>
         );
