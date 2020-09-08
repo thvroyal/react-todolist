@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import TodoItem from './components/TodoItem';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor() {
@@ -34,6 +36,8 @@ class App extends Component {
   render(){
     return (
       <div className="App">
+        <NavBar />
+        <div className="TodoApp">
         {
           this.state.todoItems.length > 0 && this.state.todoItems.map((item,index) => 
             <TodoItem 
@@ -43,6 +47,8 @@ class App extends Component {
           )
         }
         {this.state.todoItems.length === 0 && 'Nothing here.'}
+        </div>
+        <Footer />
       </div>
     );
   }

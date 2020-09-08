@@ -1,16 +1,16 @@
 .App {
-  position: absolute;
-  width: 800px;
-  height: 500px;
-  left: calc(50% - 800px/2);
-  top: calc(50% - 500px/2);
-  margin: auto;
-  background-color: white;
-  box-shadow: 2px 5px 4px rgba(0, 0, 0, 0.05);
-  border-radius: 20px;
-  padding-top: 100px;
+  background-color: #1d1d1d;
 }
+/* Style navigation bar */
 
-.text-header {
-  color: #2F63DE;
+
+
+/* style TodoApp */
+.TodoApp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  margin: 50px 0px;
+  height: 900px;
 }

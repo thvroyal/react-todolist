@@ -1,15 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 * {
   box-sizing: border-box;
 }
 body {
-  margin: 0;
-  height: 100vh;
-  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(127.47deg, #60D2F5 19.73%, #11718F 81.73%);
-  background-repeat: no-repeat;
+  margin: 0;
 }
 
 code {

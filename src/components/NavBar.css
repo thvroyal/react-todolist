@@ -1,0 +1,33 @@
+/* Style button add a new item */
+.NavBar {
+  height: 60px;
+  background-color:#282828;
+  border-bottom: 1px solid #111111;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.NavBar button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.NavBar button:active {
+  outline: none;
+}
+  .NavBar button svg {
+    fill: #292929;
+  }
+  .NavBar button:hover {
+    background: linear-gradient(66.04deg, #4158D0 -0.48%, #C850C0 36.91%, #FFCC70 99.52%), #FFFFFF;
+  }
+  
+  .NavBar button:hover svg {
+    fill: #FFFFFF;
+  }
