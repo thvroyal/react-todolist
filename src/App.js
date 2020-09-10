@@ -11,7 +11,7 @@ class App extends Component {
       todoItems: [
       {
         title: 'Saleforce account',
-        progress: 3,
+        progress: 1,
         listTodo: [
           {
             itemTitle:'Lorem ipsum dolor sit amet, consecutor elit',
@@ -37,7 +37,7 @@ class App extends Component {
       },
       {
         title: 'Create a portfolio',
-        progress: 0,
+        progress: 1,
         listTodo: [
           {
             itemTitle:'Lorem ipsum dolor sit amet, consecutor elit',
@@ -66,16 +66,29 @@ class App extends Component {
 
     this.onItemClicked = this.onItemClicked.bind(this);
   }
-  onItemClicked(item,index) {
+  onItemClicked(index,indexChild) {
     return (event) => {
-      const isComplete = item.isComplete;
       const {todoItems} = this.state; 
+      const isComplete = todoItems[index].listTodo[indexChild].isComplete; // get item child 
+      let curProgress = todoItems[index].listTodo.reduce((done, next) => {
+        if (next.isComplete) return done+1;
+        return done;
+      },0);
+      if (isComplete) --curProgress; else ++curProgress;
       this.setState({
         todoItems: [
           ...todoItems.slice(0,index),
           {
-            ...item,
-            isComplete: !isComplete
+            title: todoItems[index].title,
+            progress: curProgress,
+            listTodo: [
+              ...todoItems[index].listTodo.slice(0,indexChild),
+              {
+                ...todoItems[index].listTodo[indexChild],
+                isComplete: !isComplete
+              },
+              ...todoItems[index].listTodo.slice(indexChild+1)
+            ]
           },
           ...todoItems.slice(index+1)
         ]
@@ -84,6 +97,15 @@ class App extends Component {
   }
   render(){
     let {todoItems} = this.state;
+    let totalUncomplete = 0;
+    let done = todoItems.reduce((done,next) => {
+      if (next.progress !== next.listTodo.length) {
+        totalUncomplete += next.listTodo.length;
+        return done+next.progress;
+      }
+      return done;
+    },0);
+
     return (
       <div className="App">
         <NavBar />
@@ -91,40 +113,31 @@ class App extends Component {
           <div className="BigTitle">
             <h1>In Progress</h1>
             <div className="BigProgress">
-              {
-                todoItems.reduce((done,next) => done+next.progress ,0)
-              }/{
-                todoItems.reduce((done,next) => done+next.listTodo.length ,0)
-              }
+              { done }/{ totalUncomplete }
             </div>
           </div>
           <hr />
         {
           this.state.todoItems.length > 0 && this.state.todoItems.map((item,index) => 
-            <TodoItem 
+            item.progress < item.listTodo.length && <TodoItem 
               key={index}
               item={item} 
-              onClick={this.onItemClicked(item,index)} />
+              id={index}
+              action={this.onItemClicked} />
           )
         }
         <br />
         <div className="BigTitle">
             <h1>Completed</h1>
-            <div className="BigProgress">
-              {
-                todoItems.reduce((done,next) => done+next.progress ,0)
-              }/{
-                todoItems.reduce((done,next) => done+next.listTodo.length ,0)
-              }
-            </div>
           </div>
           <hr />
           {
           this.state.todoItems.length > 0 && this.state.todoItems.map((item,index) => 
-            <TodoItem 
+            item.progress === item.listTodo.length && <TodoItem 
               key={index}
-              item={item} 
-              onClick={this.onItemClicked(item,index)} />
+              item={item}
+              id={index} 
+              action={this.onItemClicked} />
           )
         }
         </div>

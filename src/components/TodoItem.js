@@ -23,7 +23,8 @@ class TodoItem extends Component {
     }
 
     render() {
-        const { item, onClick } = this.props;
+        const { item , id } = this.props;
+        const actionApp = this.props.action;
 
         return (
             <div className="ItemContainer">
@@ -53,8 +54,14 @@ class TodoItem extends Component {
                     'CloseContent': this.state.isCollapsed
                 })}>
                     <progress max={item.listTodo.length} value={item.progress}></progress>
-                    {item.listTodo.map((item,index) => 
-                       <ItemChild content={item} />
+                    {item.listTodo.map((item,indexChild) => 
+                       <ItemChild 
+                        item={item} 
+                        key={indexChild} 
+                        idChild={indexChild} 
+                        idParent={id} 
+                        actionTodoItem={actionApp} 
+                       />
                     )}
                 </div>
             </div>
