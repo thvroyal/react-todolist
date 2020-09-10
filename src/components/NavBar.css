@@ -21,6 +21,9 @@
 .NavBar button:active {
   outline: none;
 }
+.NavBar button:focus {
+  outline: none;
+}
   .NavBar button svg {
     fill: #292929;
   }

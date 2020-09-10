@@ -1,0 +1,29 @@
+.ItemChild {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.ItemChild .Category {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: white;
+
+    /* style button */
+    padding: 3px 5px;
+    background: linear-gradient(90deg, #B12859 0%, #F54949 100%);
+    border-radius: 5px;
+    margin: 0px 12px;
+}
+
+.ItemChild p {
+    margin: 0;
+    font-weight: 300;
+    font-size: 14px;
+    color: white;
+}
+
+.Complete {
+    color: #A5A5A5!important;
+    text-decoration-line: line-through;
+    font-style: italic;
+}

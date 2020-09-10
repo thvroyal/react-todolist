@@ -1,8 +1,13 @@
 .Footer {
-    background: rgba(255, 255, 255, 0.05);
     height: 30px;
+    background-color:#282828;
     border-top: 1px solid #111111;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
 }
