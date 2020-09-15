@@ -51,7 +51,7 @@ progress[value]::-webkit-progress-value {
     cursor: pointer;
 }
 .transform {
-    transition: all .5s ease;
+    transition: all .25s ease-out;
 }
 .collapsed {
     transform: rotate(-90deg);
