@@ -60,6 +60,58 @@ class App extends Component {
             isComplete: false
           }
         ]
+      },
+      {
+        title: 'Create a portfolio',
+        progress: 1,
+        listTodo: [
+          {
+            itemTitle:'Lorem ipsum dolor sit amet, consecutor elit',
+            category: 'design',
+            isComplete: true
+          },
+          {
+            itemTitle:'Lorem ipsum dolor sit amet, consecutor elit',
+            category: 'prototype',
+            isComplete: false
+          },
+          {
+            itemTitle:'Lorem ipsum dolor sit amet, consecutor elit',
+            category: 'design',
+            isComplete: false
+          },
+          {
+            itemTitle:'Lorem ipsum dolor sit amet, consecutor elit',
+            category: 'design',
+            isComplete: false
+          }
+        ]
+      },
+      {
+        title: 'Create a portfolio',
+        progress: 1,
+        listTodo: [
+          {
+            itemTitle:'Lorem ipsum dolor sit amet, consecutor elit',
+            category: 'design',
+            isComplete: true
+          },
+          {
+            itemTitle:'Lorem ipsum dolor sit amet, consecutor elit',
+            category: 'prototype',
+            isComplete: false
+          },
+          {
+            itemTitle:'Lorem ipsum dolor sit amet, consecutor elit',
+            category: 'design',
+            isComplete: false
+          },
+          {
+            itemTitle:'Lorem ipsum dolor sit amet, consecutor elit',
+            category: 'design',
+            isComplete: false
+          }
+        ]
       }
      ]
     }
@@ -129,8 +181,8 @@ class App extends Component {
         <br />
         <div className="BigTitle">
             <h1>Completed</h1>
-          </div>
-          <hr />
+        </div>
+        <hr />
           {
           this.state.todoItems.length > 0 && this.state.todoItems.map((item,index) => 
             item.progress === item.listTodo.length && <TodoItem 

@@ -43,6 +43,7 @@ progress[value]::-webkit-progress-value {
     margin-left: 38px;
     margin-bottom: 25px;
     display: block;
+    
 }
 
 .expand {

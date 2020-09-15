@@ -19,13 +19,16 @@ class TodoItem extends Component {
         this.setState({
             isCollapsed: !this.state.isCollapsed
         })
-        console.log(this.state.isCollapsed);
+    }
+    componentDidMount() {
+        // Function execute when all tasks is completed and move this to Completed label
+        if (this.props.item.progress === this.props.item.listTodo.length) this.collapsed();
     }
 
     render() {
         const { item , id } = this.props;
         const actionApp = this.props.action;
-
+        
         return (
             <div className="ItemContainer">
                 <div className={classNames('Title',{
@@ -46,7 +49,7 @@ class TodoItem extends Component {
                             'collapsed': this.state.isCollapsed
                         })}>
                         <path d="M2.24833 0.868744L9.5 6.59374L16.7675 0.868744L19 2.63124L9.5 10.1312L0 2.63124L2.24833 0.868744Z" 
-                        fill="white" fill-opacity="0.3"/>
+                        fill="#616161" />
                     </svg>  
                 </div>
 
